@@ -48,7 +48,8 @@ interfaceable method. Post-processing is up to you.
     from libextract.api import extract
 
     r = get('http://en.wikipedia.org/wiki/Information_extraction')
-    textnodes, tree = extract(r.content)
+    extracted = extract(r.content)
+    textnodes, tree = extracted.nodes, extracted.tree
 
 
 Using lxml's built-in methods for post-processing:
