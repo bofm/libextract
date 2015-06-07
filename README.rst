@@ -48,14 +48,14 @@ interfaceable method. Post-processing is up to you.
     from libextract.api import extract
 
     r = get('http://en.wikipedia.org/wiki/Information_extraction')
-    textnodes = list(extract(r.content))
+    textnodes, tree = extract(r.content)
 
 
 Using lxml's built-in methods for post-processing:
 
 .. code-block:: python
 
-    >> print(textnodes[0].text_content())
+    >> print(textnodes.next().text_content())
     Information extraction (IE) is the task of automatically extracting structured information...
 
 
